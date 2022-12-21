@@ -3,6 +3,7 @@ global with sharing class AccountExpose {
 
 @HttpGet
     global static Account doGet() {
+        Account anAccount = new Account();
         RestRequest req = RestContext.request;
         RestResponse res = RestContext.response;
         String accountId = req.requestURI.substring(req.requestURI.lastIndexOf('/')+1);
